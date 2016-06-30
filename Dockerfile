@@ -11,7 +11,7 @@ RUN apk add --no-cache curl bash \
     mv /opt/zookeeper-3.4.8 /opt/zookeeper
 
 ENV LOG_DIR "/var/log/zookeeper"
-ENV ZK_DATA_DIR "/var/log/zookeeper"
+ENV ZK_DATA_DIR "/var/lib/zookeeper"
 
 ADD zk-docker.sh /usr/local/bin/
 

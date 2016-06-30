@@ -42,7 +42,7 @@ echo $zk_id > $zk_dataDir/myid
 
 # set the servers in the conf
 if [ -n "$SERVERS" ]; then
-    printf '%s' "$SERVERS" | awk 'BEGIN { RS = "," }; { printf "server.%i=%s:2888:3888\n", NR, $0 }' >> /opt/zookeeper/conf/zoo.cfg
+    printf '%s' "$SERVERS" | awk -v zk_id="$zk_id" 'BEGIN { RS = "," }; { printf "server.%i=%s:2888:3888\n", NR, $0 }' >> /opt/zookeeper/conf/zoo.cfg
 fi
 
 env
