@@ -47,3 +47,12 @@ reconfiguration. From the perspective of `zookeeper-2`, this looks like:
 ## Usage
 
 `kubectl create -f zookeeper.petset.yaml`
+
+## Note on Volume Provisioners
+If you don't have a dynamic volume provisioner running on your Kubernetes cluster, you must remove this annotation and
+supply your own persistent volumes.
+
+```
+  annotations:
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
+```
