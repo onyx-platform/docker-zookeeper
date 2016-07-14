@@ -56,3 +56,8 @@ supply your own persistent volumes.
   annotations:
     service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
 ```
+
+## Prometheus Exporter
+
+The Kuberentes manfiest also starts a sidecar container making Zookeeper JMX data availible for Prometheus to aggregate.
+Feel free to disable that functionality by removing the sidecar
