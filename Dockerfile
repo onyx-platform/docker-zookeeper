@@ -1,11 +1,6 @@
 FROM java:openjdk-8-jre-alpine
-# Sourced from Franck Cuny <franck.cuny@gmail.com>
-# https://github.com/franckcuny/docker-distributedlog
 
 MAINTAINER Gardner Vickers <gardner.vickers@onyxplatform.org>
-
-# install volume: /opt
-# workdir volume: /workdir
 
 RUN apk add --no-cache curl bash
 
@@ -22,5 +17,3 @@ ADD https://storage.googleapis.com/kubernetes-release/pets/peer-finder /workdir/
 RUN chmod -c 755 /workdir/on-start.sh /workdir/peer-finder
 
 EXPOSE 2181 2888 3888
-
-#ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
