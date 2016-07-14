@@ -15,9 +15,11 @@ service. This will create DNS `A`-records for each PetSet pod even if the pod
 has not yet started. We'll end up with a list of routeable FQDN's.
 
 For a PetSet of size 3, this will look like this.
-`zookeeper-1.zookeeper.default.svc.cluster.local`,
-`zookeeper-2.zookeeper.default.svc.cluster.local`,
-`zookeeper-3.zookeeper.default.svc.cluster.local`
+```
+zookeeper-1.zookeeper.default.svc.cluster.local,
+zookeeper-2.zookeeper.default.svc.cluster.local,
+zookeeper-3.zookeeper.default.svc.cluster.local,
+```
 
 We will find the entry that matches our hostname, and write out to a volume our
 ordinal id `zookeeper-<id>.zookeeper.default.svc.cluster.local`. This is Zookeepers
